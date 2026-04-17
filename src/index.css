@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #0a1628;
+  color: #d4e6f5;
+  min-height: 100vh;
+}
+
+/* Subtle horizontal grid lines on background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 40px,
+    rgba(26, 122, 173, 0.03) 40px,
+    rgba(26, 122, 173, 0.03) 41px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Score colors */
+.score-go      { color: #2ec08c; }
+.score-caution { color: #f0a83a; }
+.score-stop    { color: #e24b4a; }
+
+.bg-score-go      { background-color: rgba(46, 192, 140, 0.15); }
+.bg-score-caution { background-color: rgba(240, 168, 58, 0.15); }
+.bg-score-stop    { background-color: rgba(226, 75, 74, 0.15); }
+
+.border-score-go      { border-color: rgba(46, 192, 140, 0.4); }
+.border-score-caution { border-color: rgba(240, 168, 58, 0.35); }
+.border-score-stop    { border-color: rgba(226, 75, 74, 0.3); }
